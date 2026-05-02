@@ -1,0 +1,289 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anshika Joshi - Full Stack Developer</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+</head>
+<body>
+    <div class="page-glow"></div>
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo"><span class="logo-a">A</span>.<span class="logo-name">JOSHI</span></div>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-copy">
+                <span class="eyebrow">Futuristic Developer Portfolio</span>
+                <h1 id="typing-text">Hi, I'm Anshika Joshi | Full Stack Developer</h1>
+                <p>Creating immersive full stack experiences with Python, Django, React and advanced UI motion.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+                <div class="hero-meta">
+                    <div><span>Location</span> Khargone, Madhya Pradesh</div>
+                    <div><span>Email</span> anshikajoshi1823@gmail.com</div>
+                </div>
+            </div>  
+            <div class="hero-visuals">
+                <div id="threejs-container"></div>
+                <div class="hero-outline"></div>
+            </div>
+        </div>
+        <div id="particles"></div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="profile-placeholder">AJ</div>
+                            <h3>Anshika Joshi</h3>
+                            <p>Aspiring Full Stack Developer with strong foundation in Python, Java, and Web Technologies. I build scalable apps and elegant experiences.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Education & Training</h3>
+                            <p>B.Tech in Information Technology (2022–2026)</p>
+                            <p>Jawaharlal Institute of Technology, Borawan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-details">
+                    <p>Passionate about innovation, problem solving and building products that make life easier. Experienced in hybrid systems, full stack workflows, and rapid prototyping.</p>
+                    <div class="personal-info">
+                        <p><strong>Phone:</strong> +91 8305858114</p>
+                        <p><strong>Mail:</strong> anshikajoshi1823@gmail.com</p>
+                    </div>
+                    <div class="about-links">
+                        <a href="{% static 'css/AnshikaJoshii (3).pdf' %}" target="_blank" rel="noopener noreferrer" class="btn btn-primary resume-btn">View Resume</a>
+                        <div class="about-social">
+                            <a href="https://www.linkedin.com/in/anshika-j-077791282" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="social-icon fab fa-linkedin-in"></i>
+                                LinkedIn
+                            </a>
+                            <a href="https://github.com/anshikajoshi07" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="social-icon fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Languages</h3>
+                    <div class="skill-bar"><span style="--skill:95%"></span></div>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Frameworks</h3>
+                    <div class="skill-bar"><span style="--skill:88%"></span></div>
+                    <ul>
+                        <li>Django</li>
+                        <li>Bootstrap</li>
+                        <li>React</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Expertise</h3>
+                    <div class="skill-bar"><span style="--skill:92%"></span></div>
+                    <ul>
+                        <li>Full Stack Development</li>
+                        <li>Problem Solving</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <p class="projects-subtitle">Live deployed projects — click to view them in action</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-overlay"></div>
+                    <h3>Online Job Portal</h3>
+                    <p>Python, Django, MySQL</p>
+                    <ul>
+                        <li>Admin + Recruiter modules</li>
+                        <li>Resume upload system</li>
+                        <li>Job posting & application tracking</li>
+                    </ul>
+                    <a href="https://jobportaldjango-2.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-project-sm">Demo</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-overlay"></div>
+                    <h3>WebDeg One Page</h3>
+                    <p>Static portfolio site</p>
+                    <ul>
+                        <li>Responsive single-page layout</li>
+                        <li>Modern visuals and navigation</li>
+                        <li>GitHub Pages deployment</li>
+                    </ul>
+                    <a href="https://anshikajoshi07.github.io/webdegonepage/" target="_blank" rel="noopener noreferrer" class="btn btn-project-sm">Demo</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-overlay"></div>
+                    <h3>Shopfloor App</h3>
+                    <p>Flutter production app</p>
+                    <ul>
+                        <li>Flutter UI for industrial workflows</li>
+                        <li>Android / web support</li>
+                        <li>Live web deployment</li>
+                    </ul>
+                    <a href="https://anshikajoshi07.github.io/shopfloor_app/" target="_blank" rel="noopener noreferrer" class="btn btn-project-sm">Demo</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-overlay"></div>
+                    <h3>Institute of Digital Risk</h3>
+                    <p>Educational resource site</p>
+                    <ul>
+                        <li>Risk management information hub</li>
+                        <li>Structured educational content</li>
+                        <li>GitHub Pages deployment</li>
+                    </ul>
+                    <a href="https://anshikajoshi07.github.io/InstituteofDigitalRisk/" target="_blank" rel="noopener noreferrer" class="btn btn-project-sm">Demo</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-overlay"></div>
+                    <h3>Vajraflow</h3>
+                    <p>Startup project</p>
+                    <ul>
+                        <li>Full stack web application</li>
+                        <li>Custom business solution</li>
+                        <li>Production ready</li>
+                    </ul>
+                    <a href="https://vajraflow.net/" target="_blank" rel="noopener noreferrer" class="btn btn-project-sm">Demo</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-overlay"></div>
+                    <h3>IBM Frontend Project</h3>
+                    <p>Frontend development</p>
+                    <ul>
+                        <li>Responsive web design</li>
+                        <li>Interactive UI components</li>
+                        <li>GitHub Pages hosted</li>
+                    </ul>
+                    <a href="https://anshikajoshi07.github.io/ibmFrontend/" target="_blank" rel="noopener noreferrer" class="btn btn-project-sm">Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <span class="experience-badge">Startup Project</span>
+                    <h3>Full Stack Developer</h3>
+                    <p>Built full stack app using React + Django, delivered responsive UI and backend authentication.</p>
+                </div>
+                <div class="experience-card">
+                    <span class="experience-badge">Suvidha Foundation</span>
+                    <h3>Document Summarization System</h3>
+                    <p>Created hybrid summarization architecture, achieved 55x speed and 98% memory reduction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="contact-grid">
+                <div class="contact-panel">
+                    <h3>Send a message</h3>
+                    <p>Reach out for collaborations, internships, or any exciting project idea.</p>
+                </div>
+                <form id="contact-form" class="contact-form" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Get in Touch</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <a href="mailto:anshikajoshi1823@gmail.com">anshikajoshi1823@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <a href="tel:+918305858114">+91 8305858114</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>Khargone, Madhya Pradesh</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Me</h3>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/anshika-j-077791282" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="https://github.com/anshikajoshi07" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Anshika Joshi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
