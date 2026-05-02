@@ -98,7 +98,7 @@ function typeWriter(text, element, speed = 70) {
 
 function createParticles() {
     const particlesContainer = document.getElementById('particles');
-    for (let i = 0; i < 150; i++) {
+    for (let i = 0; i < 350; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
         particle.style.left = Math.random() * 100 + '%';
