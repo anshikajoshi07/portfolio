@@ -12,3 +12,5 @@ services:
         value: 1
       - key: DJANGO_SETTINGS_MODULE
         value: portfolio_project.settings
+      - key: DJANGO_DEBUG
+        value: False
